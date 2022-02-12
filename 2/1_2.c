@@ -10,7 +10,7 @@ int main()
         return 0;
     }
     printf("Enter numbers of:\n");
-    int min_v = 0;
+    int min_v = __INT_MAX__;
     int temp;
     while(n--){
         if (scanf("%d", &temp)!=1) {

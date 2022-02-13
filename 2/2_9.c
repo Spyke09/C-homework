@@ -17,7 +17,7 @@ int main()
             idx = c;
             st = fn;
         }
-        printf("Index: %d, MaxIndex: %d, MaxLen: %d\n", idx, idxm, max);
+        //printf("Index: %d, MaxIndex: %d, MaxLen: %d\n", idx, idxm, max);
         fn++;
         prev = temp;
     }

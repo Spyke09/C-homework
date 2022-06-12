@@ -28,25 +28,25 @@ class Satellite
 class Station
 {
     public:
-        Station(const std::vector<std::string> &names)
+        Station(std::vector<std::string> &names)
         {
             srand(time(NULL));
-            for (int i = 0; i<names.size(); ++i) {
-                Satellite* s = new Satellite(names[i]);
-                satellites.push_back(s);
+            for (auto i: names) {
+                Satellite* s = new Satellite(i);
+                satellites.push_back(*s);
             }
         }
         void work()
         {
             while(1) {                
                 double res;
-                for (auto s: satellites) res += s->getPosition();
+                for (auto s: satellites) res += s.getPosition();
                 std::cout<<res/satellites.size()<<"\n";
                 Sleep(1000);
             }
         }
     private:
-        std::vector<Satellite*> satellites;
+        std::vector<Satellite> satellites;
 };
 
 int main()
